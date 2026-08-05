@@ -8,6 +8,10 @@ const path = require("path");
 const FLEXATAR_API_URL = "https://api.flexatar-sdk.com";
 const FLEXATAR_API_SECRET = process.env.FLEXATAR_API_SECRET;
 const POLL_INTERVAL_MS = 5000;
+const CREATION_CONFIG = {
+    version: "2.00",
+    creationMode: "optimized"
+};
 
 function printUsage() {
     console.error("Usage: node create-flexatar-cli.js <image-path> <output-dir>");
@@ -32,7 +36,8 @@ async function requestUploadLink() {
         headers: {
             Authorization: `Bearer ${FLEXATAR_API_SECRET}`,
             "Content-Type": "application/json"
-        }
+        },
+        body: JSON.stringify(CREATION_CONFIG)
     });
 
     if (!response.ok) {

@@ -194,3 +194,25 @@ At a general level, the idea is:
 Short example:
 
 A fantasy quest game creates a different story arc for each player based on their previous choices, alliances, and play style. The king, rival hunter, merchant, or mysterious guide can all be generated as AI-made portraits, then animated with Flexatar so they speak their lines as living characters instead of static images. This makes personalized story content much more immersive without requiring a traditional animated character pipeline for every branch of the game.
+
+### Receiver-Side Rendered Video Calls
+
+Another strong use case is real-time communication where you want some of the benefits of video conferencing without paying the full bandwidth cost of transmitting live video.
+
+The pattern is simple:
+
+1. The speaking side sends audio and a lightweight avatar representation instead of a continuous video stream.
+2. The receiving side renders the talking avatar locally.
+3. The conversation still feels closer to video than to a plain voice call, because participants see an animated speaking face instead of only hearing audio.
+4. Network load stays much lower because rendered video frames do not need to be transmitted in real time.
+
+This is especially attractive in conditions where:
+
+- the network connection is weak or unstable
+- mobile data is expensive
+- the product needs to scale communication sessions efficiently
+- the experience should remain expressive even when full video is not practical
+
+Short example:
+
+A calling product for regions with poor connectivity lets users join what feels like a video conversation, but the avatar is rendered locally on the receiving device. The sender transmits voice and avatar-driving data rather than a full camera stream. As a result, users keep a face-to-face style interaction while using much less bandwidth and staying more resilient on low-quality networks.

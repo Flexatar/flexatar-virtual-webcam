@@ -1,6 +1,8 @@
 
 
-import  "./engine.mod.js"
+
+import {FtarView} from "./engine.mod.js" ;
+// import  "./engine.mod.js"
 import "./ftar_lipsync_mod.js"
 
 let setVoiceProcessingParameters
@@ -14,7 +16,7 @@ function logEvent(type, data = {}) {
         console.warn("[RENDER WORKER] logEvent failed", err)
     }
 }
-
+log("FtarView", FtarView);
 
 function arrayBufferToFile(arrayBuffer, fileName, mimeType = "application/octet-stream") {
     const blob = new Blob([arrayBuffer], { type: mimeType });

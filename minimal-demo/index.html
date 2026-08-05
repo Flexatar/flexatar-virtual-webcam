@@ -16,8 +16,10 @@
         </p>
 
         <div class="actions">
-          <button id="startButton" type="button">Start microphone</button>
+          <button id="startButton" type="button" disabled>Start microphone</button>
+          <button id="uploadButton" type="button" disabled>Upload audio file</button>
           <button id="stopButton" type="button" disabled>Stop</button>
+          <input id="audioFileInput" type="file" accept="audio/*" hidden />
         </div>
 
         <p class="note">
